@@ -40,6 +40,8 @@ public class LineController : MonoBehaviour
             }
 
     }
+
+
     public void AddPoint(Transform point)
     {
         lr.positionCount++;

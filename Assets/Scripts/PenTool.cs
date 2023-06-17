@@ -40,13 +40,12 @@ public class PenTool : MonoBehaviour
 
         #region GetMouseButtonDown
 
-        if (Input.GetMouseButtonDown(0) && !isMove) // MouseDown
+        if (Input.GetMouseButtonDown(0) /*&& !isMove*/) // MouseDown
         {
             if (Physics.Raycast(ray, out hit))
             {
                 if (hit.transform.tag == "Player")
                     isLine = true;
-
             }
         }
 
@@ -54,7 +53,7 @@ public class PenTool : MonoBehaviour
 
         #region GetMouseButton
 
-        if (Input.GetMouseButton(0) && !isMove) // GetMouseButton
+        if (Input.GetMouseButton(0)/* && !isMove*/) // GetMouseButton
         {
             if (Physics.Raycast(ray, out hit))
             {
