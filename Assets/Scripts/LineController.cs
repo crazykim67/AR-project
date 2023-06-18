@@ -26,11 +26,11 @@ public class LineController : MonoBehaviour
         // 중간에 채워야할 포인트 수
         int re = (int)(Distance / _length); 
 
-            GameObject dot;
-            
+        GameObject dot;
+        
         if(re > 1)
-                for (int i = 0; i < re; i++)
-                {
+            for (int i = 0; i < re; i++)
+            {
                     dot = Instantiate(dotPrefab, new Vector3(0, 0.025f, 0), Quaternion.identity, setParent);
                     dot.transform.position = Vector3.Lerp(p0, p1, (i+1) / ((float)(re + 1)));
                     lr.positionCount++;
@@ -38,7 +38,6 @@ public class LineController : MonoBehaviour
                     //Debug.Log("Result : " + re);
                     Debug.Log(p0);
             }
-
     }
 
 

@@ -533,7 +533,7 @@ MonoBehaviour:
   lineSize: 0.4
   lineActive: 1
   lineLength: 1
-  Speed: 3
+  playerMove: {fileID: 0}
   worldMousePosition: {x: 0, y: 0, z: 0}
   playerObject: {fileID: 7751087238752566497, guid: fbed34ca6d1671f47abb6ccc046fa57e,
     type: 3}

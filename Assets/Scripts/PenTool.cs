@@ -17,11 +17,8 @@ public class PenTool : MonoBehaviour
     [SerializeField] private bool lineActive;
     [SerializeField] private float lineLength;
 
-    [Header("Speed")]
-    [SerializeField] private float Speed;
-
     private LineController currentLine;
-    //public PlayerMove playerMove;
+    public PlayerMove playerMove;
     //public PlayerStatus playerStatus;
 
     public Vector3 worldMousePosition;
@@ -64,12 +61,10 @@ public class PenTool : MonoBehaviour
 
                     worldMousePosition = hit.point;
 
-                    //worldMousePosition.y = 0.05f;
+                    worldMousePosition.y = 0.05f;
 
                     if (currentLine == null)
-                    {
                         currentLine = LineSet(linePrefab, lineActive, lineSize);
-                    }
 
                     if (!CanAppend(worldMousePosition)) return; // 라인 길이 
 
@@ -104,7 +99,6 @@ public class PenTool : MonoBehaviour
         {
             foreach(var dot in currentLine.points)
             {
-
                 dot.transform.localScale = new Vector3(dotSize, dotSize, dotSize);
                 dot.transform.gameObject.SetActive(dotActive);
             }
@@ -128,7 +122,6 @@ public class PenTool : MonoBehaviour
     // 포인트 생성
     public GameObject InstantiateDotSet(GameObject _obj, bool _act, float _size, Vector3 _pos) 
     {
-
         dotPrefab.transform.localScale = new Vector3(_size, _size, _size);
 
         _obj.SetActive(_act);
@@ -141,7 +134,6 @@ public class PenTool : MonoBehaviour
     // 라인렌더러 포지션 생성
     private LineController LineSet(GameObject _obj, bool _act, float size)
     {
-
         _obj.GetComponent<LineController>().lr.startWidth = size;
 
         _obj.SetActive(_act);
